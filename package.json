@@ -1,0 +1,33 @@
+{
+  "name": "d3-clone",
+  "version": "1.0.0",
+  "description": "D3js clone node plugin",
+  "keywords": [
+    "d3",
+    "d3-module",
+    "d3-clone",
+    "d3-cloning",
+    "clone",
+    "cloning"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/d3-clone.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/jkutianski/d3-clone.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkutianski/d3-clone"
+  },
+  "scripts": {
+    "pretest": "node ./scripts/mkbuild.js && rollup -c ./rollup.config.js",
+    "test": "tape test/**/*-test.js",
+    "prepublish": "npm run test && uglifyjs build/d3-clone.js -c -m -o build/d3-clone.min.js"
+  },
+  "devDependencies": {
+    "rollup": "0",
+    "tape": "4",
+    "uglify-js": "3",
+    "d3-selection": "1",
+    "jsdom": "11"
+  }
+}

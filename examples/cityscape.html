@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3 World Clock</title>
+    <script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
+    <script src="../build/d3-clone.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="SVGcontainer"></div>
+</body>
+<script>
+var maxFlours = 14,
+    nBuildings = 14,
+    zoom = 0.063;
+
+d3.text('building.svg', (textsvg) => {
+    var svg = (function(textsvg) {
+        var svg = d3.selectAll("#SVGcontainer").html(textsvg).select("*");
+        svg.attr('viewBox', '0 0 400 170').attr('style', 'enable-background:new ' + svg.attr('viewBox'));
+        return svg;
+    })(textsvg);
+
+    var data = Array.from({ length: nBuildings })
+        .map(function(d, i) {
+            return {
+                x: (450 * i),
+                y: (179 * (maxFlours - 1))
+            }
+        });
+
+    var buildings = svg.selectAll('[id^=building]')
+        .exit().remove()
+        .data(data).enter()
+        .insertClone(svg.select('#building'))
+        .attr('transform', function(d, i) {
+            return `scale(${zoom}) translate(${d.x} ${d.y})`;
+        });
+
+    svg.select('#building').remove();
+
+    buildings.each(function(d) {
+
+        var flours = Math.round(maxFlours * Math.random()),
+            building = d3.select(this),
+            top = building.select('[id^=top]'),
+            wall = building.select('[id^=wall]'),
+            windows = building.selectAll('[id^=windows]');
+
+        var data = Array.from({ length: flours })
+            .map(function(d, i) {
+                return {
+                    x: 0,
+                    y: (-179 * i)
+                }
+            });
+
+        if (!flours) {
+            top.attr('style', 'display: none;');
+            wall.attr('style', 'display: none;');
+            windows.attr('style', 'display: none;');
+        } else {
+            top.attr('transform', function() {
+            	return `translate(0, ${-179 * (flours - 1)})`;
+        	});
+            wall.attr('height', function() {
+            		var h = parseInt(this.getAttribute('height'));
+                    return h + (179 * (flours - 1));
+                })
+                .attr('y', function() {
+                	var y = parseInt(this.getAttribute('y'));
+                    return y - (179 * (flours - 1));
+                });
+            windows.exit().remove()
+                .data(data).enter()
+                .each(function(d) {
+                    building
+                        .appendClone(
+                            building.select('[id^=windows]')
+                        )
+                        .attr('transform', function() {
+                            return `translate(${d.x} ${d.y})`;
+                        });
+                });
+
+            building.select('[id^=windows]').remove();
+        }
+    });
+});
+</script>

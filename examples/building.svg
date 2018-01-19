@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 454.3 341" style="enable-background:new 0 0 454.3 341;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#5C6670;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#0055B8;}
+	.st3{opacity:0.2;enable-background:new    ;}
+	.st4{fill:#E0E0D3;}
+	.st5{fill:#333E48;}
+	.st6{opacity:0.1;enable-background:new    ;}
+</style>
+<g id="building">
+	<rect id="wall" x="49.6" y="63.5" class="st0" width="355.1" height="239.4"/>
+	<g id="windows">
+		<g id="windowsLeft">
+			<path class="st1" d="M196.1,218.4v-99.1c0-6.8-5.6-12.4-12.4-12.4h-77.4c-6.8,0-12.4,5.6-12.4,12.4v99.1H196.1z"/>
+			<rect id="rectLeft" x="114.9" y="128" class="st2" width="60.3" height="90.4"/>
+			<rect x="94" y="199.2" class="st3" width="102.1" height="19.2"/>
+			<path d="M205,236.3c0,3.8-3.1,6.9-6.9,6.9H92c-3.8,0-6.9-3.1-6.9-6.9v-15.1c0-3.8,3.1-6.9,6.9-6.9h106.1c3.8,0,6.9,3.1,6.9,6.9
+				V236.3L205,236.3z"/>
+			<rect x="109.9" y="214.3" class="st3" width="16.4" height="28.9"/>
+			<rect x="163.7" y="214.3" class="st3" width="16.4" height="28.9"/>
+		</g>
+		<g id="windowsRigth">
+			<path class="st1" d="M258.1,218.4v-99.1c0-6.8,5.6-12.4,12.4-12.4h77.4c6.8,0,12.4,5.6,12.4,12.4v99.1H258.1z"/>
+			<rect x="279" y="128" class="st2" width="60.3" height="90.4"/>
+			<rect x="258.1" y="199.2" class="st3" width="102.1" height="19.2"/>
+			<path d="M249.2,236.3c0,3.8,3.1,6.9,6.9,6.9h106.1c3.8,0,6.9-3.1,6.9-6.9v-15.1c0-3.8-3.1-6.9-6.9-6.9H256.1
+				c-3.8,0-6.9,3.1-6.9,6.9L249.2,236.3L249.2,236.3z"/>
+			<rect x="327.9" y="214.3" class="st3" width="16.4" height="28.9"/>
+			<rect x="274" y="214.3" class="st3" width="16.4" height="28.9"/>
+		</g>
+	</g>
+	<path id="street" class="st4" d="M454.2,329.4c0,6.4-5.2,11.6-11.6,11.6h-431C5.2,341,0,335.8,0,329.4v-33.6
+		c0-6.4,5.2-11.6,11.6-11.6h431.1c6.4,0,11.6,5.2,11.6,11.6L454.2,329.4L454.2,329.4z"/>
+	<g id="top">
+		<rect x="49.6" y="26.7" class="st3" width="355.1" height="56.9"/>
+		<path class="st5" d="M428.6,46.4c0,9.6-7.8,17.4-17.4,17.4H43c-9.6,0-17.4-7.8-17.4-17.4v-29C25.6,7.8,33.4,0,43,0h368.2
+			c9.6,0,17.4,7.8,17.4,17.4V46.4L428.6,46.4z"/>
+		<rect x="323" class="st3" width="16.4" height="63.9"/>
+		<path class="st6" d="M43,0c-9.6,0-17.4,7.8-17.4,17.4v29c0,9.6,7.8,17.4,17.4,17.4h184.1V0H43z"/>
+		<rect x="218.9" class="st3" width="16.4" height="63.9"/>
+		<rect x="114.8" class="st3" width="16.4" height="63.9"/>
+	</g>
+	<script  type="application/json">[
+	{
+		&quot;selection&quot;: &quot;#windowsLeft &gt; path:nth-child(1)&quot;,
+		&quot;attribute&quot;: {
+			&quot;name&quot;: &quot;fill&quot;,
+			&quot;value&quot;: &quot;{{fillPath}}&quot;
+		}
+	}
+]
+		</script>
+</g>
+</svg>
