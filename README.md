@@ -16,6 +16,8 @@ To install via NPM use `npm install d3-clone`. You can also load directly from [
 How to use it
 -------------
 
+*Append clone*
+
 ```selection.appendClone(source)```
 
 This example append the node selected by `svg.select('#source')` to each node selected from `svg.selectAll('.node')`.
@@ -55,6 +57,8 @@ after run the code you'll have
   <div id="source3"></div>
 </div>
 ```
+
+*Insert clone*
 
 ```selection.insertClone(source, before)```
 
