@@ -1,4 +1,10 @@
-# d3-clone
+d3-clone
+========
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f424dd4911324201a86c9543e192c4e6)](https://www.codacy.com/app/jkutianski/d3-clone?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jkutianski/d3-clone&amp;utm_campaign=Badge_Grade)
+
+[![dependencies Status](https://david-dm.org/jkutianski/d3-clone/status.svg)](https://david-dm.org/jkutianski/d3-clone)
+[![devDependencies Status](https://david-dm.org/jkutianski/d3-clone/dev-status.svg)](https://david-dm.org/jkutianski/d3-clone?type=dev)
+
 D3js plugin for clone nodes from selections.
 
 The d3-clone add methods to append and insert a duplicate of the selection on which this method was called.
