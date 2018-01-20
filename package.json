@@ -1,7 +1,7 @@
 {
   "name": "d3-clone",
   "version": "1.0.0",
-  "description": "D3js clone node plugin",
+  "description": "D3js plugin for clone nodes from selections.",
   "keywords": [
     "d3",
     "d3-module",
