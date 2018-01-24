@@ -31,69 +31,77 @@ d3.text('building.svg', (textsvg) => {
         });
 
     var buildings = svg.selectAll('[id^=building]')
-        .exit().remove()
-        .data(data).enter()
-        .insertClone(svg.select('#building'))
+        .data(data)
         .attr('transform', function(d, i) {
             return `scale(${zoom}) translate(${d.x} ${d.y})`;
         });
 
-    svg.select('#building').remove();
+    buildings = buildings
+        .enter()
+        .insertClone(svg.select('#building'))
+        .attr('transform', function(d, i) {
+            return `scale(${zoom}) translate(${d.x} ${d.y})`;
+        })
+        .merge(buildings);
 
-    buildings.each(function(d) {
+    buildings
+        .each(function(d) {
 
-        var flours = Math.round(maxFlours * Math.random());
+            var flours = Math.round(maxFlours * Math.random());
 
-        var colours = ['red', 'green', 'blue'];
+            var colours = ['red', 'green', 'blue'];
 
-        var building = d3.select(this),
-            top = building.select('[id^=top]'),
-            wall = building.select('[id^=wall]'),
-            windows = building.selectAll('[id^=windows]');
+            var building = d3.select(this),
+                top = building.select('[id^=top]'),
+                wall = building.select('[id^=wall]'),
+                windows = building.selectAll('[id^=windows]');
 
-        var data = Array.from({ length: flours })
-            .map(function(d, i) {
-                return {
-                    x: 0,
-                    y: (-179 * i),
-                    color: colours[Math.round((colours.length -1) * Math.random()) || 0]
-                }
-            });
-
-        if (!flours) {
-            top.attr('style', 'display: none;');
-            wall.attr('style', 'display: none;');
-            windows.attr('style', 'display: none;');
-        } else {
-            top.attr('transform', function() {
-            	return `translate(0, ${-179 * (flours - 1)})`;
-        	});
-            wall.attr('height', function() {
-            		var h = parseInt(this.getAttribute('height'));
-                    return h + (179 * (flours - 1));
-                })
-                .attr('y', function() {
-                	var y = parseInt(this.getAttribute('y'));
-                    return y - (179 * (flours - 1));
-                });
-            windows.exit().remove()
-                .data(data).enter()
-                .each(function(d) {
-                    building
-                        .appendClone(
-                            building.select('[id^=windows]')
-                        )
-                        .attr('transform', function() {
-                            return `translate(${d.x} ${d.y})`;
-                        })
-                        .selectAll('rect')
-                        .attr('style', function(s,i) {
-                            return `fill: ${d.color || 'blue'};`
-                        });
+            var data = Array.from({ length: flours })
+                .map(function(d, i) {
+                    return {
+                        x: 0,
+                        y: (-179 * i),
+                        color: colours[Math.round((colours.length - 1) * Math.random()) || 0]
+                    }
                 });
 
-            building.select('[id^=windows]').remove();
-        }
-    });
+            if (!flours) {      // No building (0 flours)
+                top.remove();
+                wall.remove();
+                windows.remove();
+            } else {
+                top.attr('transform', function() {
+                    return `translate(0, ${-179 * (flours - 1)})`;
+                });
+                wall.attr('height', function() {
+                        var h = parseInt(this.getAttribute('height'));
+                        return h + (179 * (flours - 1));
+                    })
+                    .attr('y', function() {
+                        var y = parseInt(this.getAttribute('y'));
+                        return y - (179 * (flours - 1));
+                    });
+                windows
+                    .exit().remove()
+                    .data(data)
+                    .enter()
+                    .merge(windows)
+                    .each(function(d) {
+                        building
+                            .appendClone(
+                                building.select('[id^=windows]')
+                            )
+                            .attr('transform', function() {
+                                return `translate(${d.x} ${d.y})`;
+                            })
+                            .selectAll('rect')
+                            .attr('style', function(s, i) {
+                                return `fill: ${d.color || 'blue'};`
+                            });
+                    });
+
+                    building.select('[id^=windows]').remove();   
+            }
+        });
 });
 </script>
