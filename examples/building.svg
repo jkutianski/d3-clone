@@ -44,15 +44,5 @@
 		<rect x="218.9" class="st3" width="16.4" height="63.9"/>
 		<rect x="114.8" class="st3" width="16.4" height="63.9"/>
 	</g>
-	<script  type="application/json">[
-	{
-		&quot;selection&quot;: &quot;#windowsLeft &gt; path:nth-child(1)&quot;,
-		&quot;attribute&quot;: {
-			&quot;name&quot;: &quot;fill&quot;,
-			&quot;value&quot;: &quot;{{fillPath}}&quot;
-		}
-	}
-]
-		</script>
 </g>
 </svg>
