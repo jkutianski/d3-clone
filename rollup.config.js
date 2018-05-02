@@ -9,5 +9,6 @@ export default [{
         	'd3-selection': 'd3'
         },
         extend: true
-    }
+    },
+    external: ['d3-selection']
 }];
