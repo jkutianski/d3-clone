@@ -4,6 +4,7 @@ d3-clone
 
 [![dependencies Status](https://david-dm.org/jkutianski/d3-clone/status.svg)](https://david-dm.org/jkutianski/d3-clone)
 [![devDependencies Status](https://david-dm.org/jkutianski/d3-clone/dev-status.svg)](https://david-dm.org/jkutianski/d3-clone?type=dev)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/jkutianski/d3-clone/badge.svg?targetFile=package.json)](https://snyk.io/test/github/jkutianski/d3-clone?targetFile=package.json)
 
 D3js plugin for clone nodes from selections.
