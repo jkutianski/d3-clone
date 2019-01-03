@@ -1,8 +1,8 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('d3-selection')) :
     typeof define === 'function' && define.amd ? define(['d3-selection'], factory) :
-    (factory(global.d3));
-}(this, (function (d3Selection) { 'use strict';
+    (global = global || self, factory(global.d3));
+}(this, function (d3Selection) { 'use strict';
 
     function replace(el){
         var id = null,
@@ -55,4 +55,4 @@
     d3Selection.selection.prototype.appendClone = selection_appendClone;
     d3Selection.selection.prototype.insertClone = selection_insertClone;
 
-})));
+}));
