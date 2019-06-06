@@ -1,6 +1,6 @@
 {
   "name": "d3-clone",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "D3js plugin for clone nodes from selections.",
   "keywords": [
     "d3",
@@ -27,7 +27,7 @@
     "rollup": ">=1.0.1",
     "tape": ">=4.9.2",
     "uglify-js": ">=3.4.9",
-    "d3-selection": "1.3.x",
+    "d3-selection": ">=1.3.x",
     "jsdom": ">=13.1.0"
   }
 }
