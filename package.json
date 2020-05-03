@@ -21,7 +21,8 @@
   "scripts": {
     "pretest": "node ./scripts/mkbuild.js && rollup -c ./rollup.config.js",
     "test": "tape test/**/*-test.js",
-    "prepublish": "npm run test && uglifyjs build/d3-clone.js -c -m -o build/d3-clone.min.js"
+    "prepublish": "npm run snyk-protect && npm run test && uglifyjs build/d3-clone.js -c -m -o build/d3-clone.min.js",
+    "snyk-protect": "snyk protect"
   },
   "devDependencies": {
     "d3-selection": ">=1.3.x",
@@ -29,5 +30,9 @@
     "rollup": ">=1.0.1",
     "tape": ">=4.9.2",
     "uglify-js": ">=3.4.9"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.317.0"
   }
 }
