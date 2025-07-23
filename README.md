@@ -1,6 +1,4 @@
-DEPRECATED
-
-d3-clone
+d3-clone (DEPRECATED)
 ========
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f424dd4911324201a86c9543e192c4e6)](https://www.codacy.com/app/jkutianski/d3-clone?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jkutianski/d3-clone&amp;utm_campaign=Badge_Grade)
 
